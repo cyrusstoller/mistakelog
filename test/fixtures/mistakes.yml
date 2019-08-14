@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  description: MyText1
+  processed_description: MyText1
+  reflection: MyText12
+  processed_reflection: MyText12
+  description_rating: 1
+  reflection_rating: 1
+  reminder_date: 2019-07-13
+  slug: MyString
+
+two:
+  user: two
+  description: MyText2
+  processed_description: MyText2
+  reflection: MyText22
+  processed_reflection: MyText22
+  description_rating: 1
+  reflection_rating: 2
+  reminder_date: 2019-07-13
+  slug: MyString2

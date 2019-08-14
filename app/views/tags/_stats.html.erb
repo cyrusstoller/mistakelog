@@ -1,0 +1,20 @@
+<div class="columns">
+  <div class="column">
+    <div class="box has-text-centered">
+      <span class="has-text-weight-bold">Count:</span>
+      <%= @stats[:count] %>
+    </div>
+  </div>
+  <div class="column">
+    <div class="box has-text-centered">
+      <span class="has-text-weight-bold">Avg diff:</span>
+      <%= @stats[:avg_diff] %>
+    </div>
+  </div>
+  <div class="column">
+    <div class="box has-text-centered">
+      <span class="has-text-weight-bold">Waiting for:</span>
+      <%= @stats[:incomplete] %>
+    </div>
+  </div>
+</div>

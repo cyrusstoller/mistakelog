@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%= title %></title>
+    <meta property="og:title" content="<%= title %>" />
+    <meta property="og:description" content="Mistake Log - track and reflect on your mistakes and failures" />
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application' %>
+    <%= stylesheet_pack_tag 'application' %>
+
+    <%= render "layouts/analytics" %>
+
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+  </head>
+
+  <body>
+    <%= render "layouts/header" %>
+    <%= render "layouts/flash_messages" %>
+    <section class="section main-body" vue-enabled>
+      <div class="container">
+        <%= yield %>
+      </div>
+    </section>
+  </body>
+</html>

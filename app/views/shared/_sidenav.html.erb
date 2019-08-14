@@ -1,0 +1,20 @@
+<nav class="panel">
+  <p class="panel-heading">
+    Actions
+  </p>
+  <%= link_to new_mistake_path, class: sidenav_is_active(:new, params) do %>
+    New mistake
+  <% end %>
+  <%= link_to mistakes_path, class: sidenav_is_active(:all_mistakes, params) do %>
+    View all mistakes
+  <% end %>
+  <%= link_to mistakes_path(filter: :incomplete), class: sidenav_is_active(:without_reflection, params) do %>
+    Without reflection
+  <% end %>
+  <%= link_to mistakes_path(filter: :complete), class: sidenav_is_active(:with_reflection, params) do %>
+    With reflection
+  <% end %>
+  <%= link_to tags_path, class: sidenav_is_active(:tags, params) do %>
+    View all tags
+  <% end %>
+</nav>

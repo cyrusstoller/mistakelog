@@ -1,0 +1,9 @@
+Hi <%= @user.email %>,
+
+Thank you for using Mistake Log.
+
+This is a friendly reminder that you have <%= pluralize(@mistakes.count, "mistake") %> that you wanted to reflect on.
+
+Please navigate to <%= mistakes_url(filter: :incomplete) %> to sign in.
+
+Hope this has been helpful. Have a good rest of your day.

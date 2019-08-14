@@ -1,0 +1,45 @@
+// Place all the styles related to the tags controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.tribute-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: auto;
+  max-height: 300px;
+  max-width: 500px;
+  overflow: auto;
+  display: block;
+  z-index: 999999;
+
+  ul {
+    margin: 0;
+    margin-top: 2px;
+    padding: 0;
+    list-style: none;
+    background: #efefef;
+  }
+
+  li {
+    padding: 5px 5px;
+    cursor: pointer;
+
+    &.highlight, &:hover {
+      background: #ddd;
+      margin-bottom: 0;
+    }
+
+    span {
+      font-weight: bold;
+    }
+
+    &.no-match {
+      cursor: default;
+    }
+  }
+
+  .menu-highlighted {
+    font-weight: bold;
+  }
+}

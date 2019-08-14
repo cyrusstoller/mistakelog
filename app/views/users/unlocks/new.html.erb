@@ -1,0 +1,26 @@
+<div class="columns">
+  <div class="column is-4-desktop is-offset-4-desktop is-6-tablet is-offset-3-tablet">
+    <h2 class="title">Resend unlock instructions</h2>
+
+    <%= form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
+      <%= render "shared/error_messages", object: f.object %>
+
+      <div class="field">
+        <%= f.label :email, class: "label" %>
+        <div class="control">
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "input" %>
+        </div>
+      </div>
+
+      <div class="field actions">
+        <div class="control">
+          <%= f.submit "Resend unlock instructions", class: "button is-link" %>
+        </div>
+      </div>
+    <% end %>
+
+    <br>
+
+    <%= render "devise/shared/links" %>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<div class="columns reverse-order-mobile">
+  <div class="column is-3">
+    <%= render "shared/sidenav" %>
+  </div>
+
+  <div class="column">
+    <h1 class="title">Tags</h1>
+
+    <% if @tags.length == 0 %>
+      <div class="box">
+        By typing <code>#oops</code> into a description or reflection,
+        you can create a new tag called <code>#oops</code>.
+      </div>
+    <% end %>
+
+    <ul>
+      <% @tags.each do |tag| %>
+        <li><%= link_to "##{tag.name}", tag %> (<%= tag.cached_count %>)</li>
+      <% end %>
+    </ul>
+
+    <br>
+    <%= paginate @tags %>
+  </div>
+</div>

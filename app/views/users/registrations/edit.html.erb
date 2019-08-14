@@ -1,0 +1,60 @@
+<div class="columns">
+  <div class="column is-4-desktop is-offset-4-desktop is-6-tablet is-offset-3-tablet">
+    <h2 class="title">Edit Account Information</h2>
+
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <%= render "shared/error_messages", object: f.object %>
+
+      <div class="field">
+        <%= f.label :email, class: "label" %>
+        <div class="control">
+          <%= f.text_field :email, autofocus: true, autocomplete: "login", class: "input" %>
+        </div>
+      </div>
+
+      <div class="field">
+        <%= f.label :password, class: "label" %>
+        <div class="control">
+          <%= f.password_field :password, autocomplete: "off", class: "input" %>
+          <i>(leave blank if you don't want to change it)</i>
+        </div>
+      </div>
+
+      <div class="field">
+        <%= f.label :password_confirmation, class: "label" %>
+        <div class="control">
+          <%= f.password_field :password_confirmation, autocomplete: "off", class: "input" %>
+        </div>
+      </div>
+
+      <div class="field">
+        <%= f.label :current_password, class: "label" %>
+        <div class="control">
+          <%= f.password_field :current_password, autocomplete: "current-password", class: "input" %>
+          <i>(we need your current password to confirm your changes)</i>
+        </div>
+      </div>
+
+      <div class="fields actions">
+        <div class="control">
+          <%= f.submit nil, class: "button is-link" %>
+        </div>
+      </div>
+    <% end %>
+
+    <br>
+
+    <h3 class="title">Delete my account</h3>
+
+    <p>
+      <span class="tag is-warning">Warning</span> This is permanent and can't be undone.
+    </p>
+
+    <br>
+
+    <p>
+      <%= button_to "Delete my account", registration_path(resource_name),
+        class: "button is-danger", data: { confirm: "Are you sure?" }, method: :delete %>
+    </p>
+  </div>
+</div>

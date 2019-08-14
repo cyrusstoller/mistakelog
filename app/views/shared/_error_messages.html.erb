@@ -1,0 +1,18 @@
+<% if object.errors.any? %>
+  <article class="error-messages message is-danger">
+    <div class="message-header">
+      <p>
+        <%= pluralize(object.errors.count, "error")%>
+        prohibited this from being successful:
+      </p>
+    </div>
+
+    <div class="message-body">
+      <ul class="no-bottom">
+      <% object.errors.full_messages.each do |m| %>
+        <li><i><%= m %></i></li>
+      <% end %>
+      </ul>
+    </div>
+  </article>
+<% end %>

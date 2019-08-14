@@ -1,0 +1,28 @@
+<div class="columns reverse-order-mobile">
+  <div class="column is-3">
+    <%= render "shared/sidenav" %>
+  </div>
+
+  <div class="column">
+    <div class="is-pulled-right">
+      <%= link_to "New mistake", new_mistake_path, class: "button" %>
+    </div>
+    <h1 class="title"><%= @title %></h1>
+
+    <%= render @mistakes %>
+
+    <% if @mistakes.length == 0 %>
+      <div class="box content">
+        <p>
+          You haven't logged any mistakes yet. Click the button below to get started.
+        </p>
+        <div class="buttons">
+          <%= link_to "New mistake", new_mistake_path, class: "button is-primary" %>
+          <%= link_to "Learn more", about_path, class: "button" %>
+        </div>
+      </div>
+    <% end %>
+
+    <%= paginate @mistakes %>
+  </div>
+</div>

@@ -1,0 +1,37 @@
+<nav class="navbar is-warning" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <%= link_to root_path, class: "navbar-item has-text-weight-bold" do %>
+      Mistake Log
+    <% end %>
+
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div class="navbar-menu" id="navMenu">
+    <div class="navbar-start">
+      <% if current_user %>
+        <%= link_to "New mistake", new_mistake_path, class: "navbar-item" %>
+      <% end %>
+      <%= link_to "About", about_path, class: "navbar-item" %>
+    </div>
+    <div class="navbar-end">
+      <% unless Rails.env == "production" %>
+        <div class="navbar-item">
+          <span class="tag is-info"><%= Rails.env %></span>
+        </div>
+      <% end %>
+
+      <% if current_user %>
+        <%= link_to current_user.email, edit_user_registration_path, class: "navbar-item" %>
+        <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "navbar-item" %>
+      <% else %>
+        <%= link_to "Sign up", new_user_registration_path, class: "navbar-item" %>
+        <%= link_to "Log in", new_user_session_path, class: "navbar-item" %>
+      <% end %>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,34 @@
+<div class="columns">
+  <div class="column is-4-desktop is-offset-4-desktop is-6-tablet is-offset-3-tablet">
+    <h2 class="title">Change your password</h2>
+
+    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+      <%= render "shared/error_messages", object: f.object %>
+      <%= f.hidden_field :reset_password_token %>
+
+      <div class="field">
+        <%= f.label :password, "New password", class: "label" %>
+        <div class="control">
+          <%= f.password_field :password, autofocus: true, autocomplete: "off", class: "input" %>
+        </div>
+      </div>
+
+      <div class="field">
+        <%= f.label :password_confirmation, "Confirm new password", class: "label" %>
+        <div class="control">
+          <%= f.password_field :password_confirmation, autocomplete: "off", class: "input" %>
+        </div>
+      </div>
+
+      <div class="field actions">
+        <div class="control">
+          <%= f.submit "Change my password", class: "button is-link" %>
+        </div>
+      </div>
+    <% end %>
+
+    <br>
+
+    <%= render "devise/shared/links" %>
+  </div>
+</div>

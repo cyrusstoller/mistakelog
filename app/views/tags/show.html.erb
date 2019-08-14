@@ -1,0 +1,15 @@
+<div class="columns reverse-order-mobile">
+  <div class="column is-3">
+    <%= render "shared/sidenav" %>
+  </div>
+
+  <div class="column">
+    <h1 class="title">#<%= @tag.name %></h1>
+
+    <%= render "stats" %>
+
+    <%= render @mistakes %>
+
+    <%= paginate @mistakes %>
+  </div>
+</div>

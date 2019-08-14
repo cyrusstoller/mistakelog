@@ -1,0 +1,67 @@
+<div class="columns reverse-order-mobile">
+  <div class="column is-3">
+    <%= render "shared/sidenav" %>
+  </div>
+
+  <div class="column">
+    <h1 class="title">Editing Mistake</h1>
+
+    <%= form_with(model: @mistake, local: true) do |form| %>
+      <%= render "shared/error_messages", object: form.object %>
+
+      <div class="field">
+        <div class="control">
+          <input-with-tags name="mistake[description]" placeholder="Describe your mistake"
+            rows="5" content="<%= @mistake.description %>"></input-with-tags>
+        </div>
+      </div>
+
+      <div class="columns">
+        <div class="column is-3-desktop is-4-tablet">
+          <div class="field">
+            <%= form.label :description_rating %>
+            <div class="control">
+              <div class="select is-fullwidth">
+                <%= form.select :description_rating, Mistake.rating_selection %>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="column is-3-desktop is-4-tablet">
+          <div class="field">
+            <%= form.label :reminder_date %>
+            <div class="control">
+              <%= form.date_field :reminder_date, class: "input", placeholder: "YYYY-MM-DD" %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="control">
+          <input-with-tags name="mistake[reflection]" placeholder="Add your reflection"
+            rows="5" content="<%= @mistake.reflection %>"></input-with-tags>
+        </div>
+      </div>
+
+      <div class="columns">
+        <div class="column is-3-desktop is-4-tablet">
+          <div class="field">
+            <%= form.label :reflection_rating %>
+            <div class="control">
+              <div class="select is-fullwidth">
+                <%= form.select :reflection_rating, Mistake.rating_selection %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="actions buttons">
+        <%= form.submit nil, class: "button is-link" %>
+        <%= link_to "Show mistake", @mistake, class: "button" %>
+      </div>
+    <% end %>
+  </div>
+</div>

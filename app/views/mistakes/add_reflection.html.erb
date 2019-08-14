@@ -1,0 +1,44 @@
+<div class="columns reverse-order-mobile">
+  <div class="column is-3">
+    <%= render "shared/sidenav" %>
+  </div>
+
+  <div class="column">
+    <div class="box">
+      <p class="is-italic has-text-weight-semibold">
+        Description
+      </p>
+      <markdown src="<%= @mistake.processed_description %>"></markdown>
+    </div>
+
+    <h1 class="title">Add reflection</h1>
+
+    <%= form_with(model: @mistake, local: true) do |form| %>
+      <%= render "shared/error_messages", object: form.object %>
+
+      <div class="field">
+        <div class="control">
+          <input-with-tags name="mistake[reflection]" placeholder="Add your reflection"
+            rows="5" content="<%= @mistake.reflection %>"></input-with-tags>
+        </div>
+      </div>
+
+      <div class="columns">
+        <div class="column is-3-desktop is-4-tablet">
+          <div class="field">
+            <%= form.label :reflection_rating %>
+            <div class="control">
+              <div class="select is-fullwidth">
+                <%= form.select :reflection_rating, Mistake.rating_selection %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="actions">
+        <%= form.submit "Add reflection", class: "button is-link" %>
+      </div>
+    <% end %>
+  </div>
+</div>

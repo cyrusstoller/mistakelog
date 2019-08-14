@@ -1,0 +1,19 @@
+<div class="columns reverse-order-mobile">
+  <div class="column is-3">
+    <%= render "shared/sidenav" %>
+  </div>
+
+  <div class="column">
+    <h1 class="title">Mistake</h1>
+
+    <%= render @mistake %>
+
+    <div class="buttons">
+      <% if @mistake.processed_reflection.blank? %>
+        <%= link_to "Add reflection", add_reflection_mistake_path(@mistake), class: "button is-primary" %>
+      <% end %>
+      <%= link_to 'Edit', edit_mistake_path(@mistake), class: "button" %>
+      <%= link_to 'Delete', @mistake, class: "button is-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
+  </div>
+</div>

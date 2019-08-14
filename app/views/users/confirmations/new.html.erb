@@ -1,0 +1,25 @@
+<div class="columns">
+  <div class="column is-4-desktop is-offset-4-desktop is-6-tablet is-offset-3-tablet">
+    <h2 class="title">Resend confirmation instructions</h2>
+
+    <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
+      <%= render "shared/error_messages", object: f.object %>
+
+      <div class="field">
+        <%= f.label :email, class: "label" %>
+        <div class="control">
+          <%= f.email_field :email, autofocus: true, autocomplete: "email",
+            value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) , class: "input" %>
+        </div>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "Resend confirmation instructions", class: "button is-link" %>
+      </div>
+    <% end %>
+
+    <br>
+
+    <%= render "devise/shared/links" %>
+  </div>
+</div>

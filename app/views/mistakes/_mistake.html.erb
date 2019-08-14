@@ -1,0 +1,58 @@
+<div class="box mistake">
+  <div class="actions">
+    <%= link_to mistake, class: "timestamp" do %>
+      <%= time_ago_in_words mistake.created_at %> ago
+    <% end %>
+
+    <% if mistake.overdue? && mistake.incomplete? %>
+      <span class="tag is-danger">overdue</span>
+    <% end %>
+
+    <div class="is-pulled-right">
+      <div class="mistake rating">
+        <% if mistake.incomplete? %>
+          <%= link_to "Add reflection", add_reflection_mistake_path(mistake), class: "button is-primary" %>
+        <% else %>
+          <span class="has-text-weight-bold">Before:</span> <%= mistake.description_rating %>
+          <span class="rating spacer"></span>
+          <span class="has-text-weight-bold">After:</span> <%= mistake.reflection_rating %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="mistake description text">
+    <p class="is-italic has-text-weight-semibold">
+      Description
+      <span class="has-text-weight-normal">
+        (<%= link_to "edit", edit_mistake_path(mistake) %>)
+      </span>
+    </p>
+
+    <markdown src="<%= mistake.processed_description %>"></markdown>
+  </div>
+
+  <hr class="mistake divider">
+
+  <% if mistake.incomplete? %>
+    <p class="is-italic has-text-weight-semibold">
+      Reflection
+      <span class="has-text-weight-normal">
+        (<%= link_to "add now", add_reflection_mistake_path(mistake) %>)
+      </span>
+    </p>
+    <p>
+      Reminder queued for: <%= mistake.reminder_date %>
+    </p>
+  <% else %>
+    <div class="mistake reflection text">
+      <p class="is-italic has-text-weight-semibold">
+        Reflection
+        <span class="has-text-weight-normal">
+          (<%= link_to "edit", edit_mistake_path(mistake) %>)
+        </span>
+      </p>
+      <markdown src="<%= mistake.processed_reflection %>"></markdown>
+    </div>
+  <% end %>
+</div>

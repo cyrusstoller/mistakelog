@@ -1,0 +1,80 @@
+<div class="columns">
+  <div class="column is-6-fullhd is-8-tablet">
+    <div class="content">
+      <h1>🤦‍♂️ About Mistake Log</h1>
+
+      <p>
+        We all make mistakes and experience failures from time to time.
+        Often we don't think about them.
+        It's a missed opportunity to not take time to think through these situations.
+        Athletes spend countless hours reviewing film to see how they can do better in the future.
+        While I don’t have game film, I’ve started to write down mistakes that I want to
+        reflect on later.
+      </p>
+
+      <p>
+        I built the first version of Mistake Log to help me look for recurring themes
+        and trends in my mistakes and failures.
+        Sometimes I've found that things that I thought were a big deal in the moment turn out to
+        be relatively insignificant. And other times, it's the opposite.
+        From this habit, I've learned that I'm predictably irrational in similar situations.
+      </p>
+
+      <h3>🛠 How it works</h3>
+
+      <p>
+        Step 1) describe a mistake (or failure) with an initial rating that you'd like to reflect on later.
+        There's also an optional quantitative measure that I've found useful.
+      </p>
+
+      <p>
+        Step 2) Mistake Log will send you an email reminding you to reflect on each mistake.
+      </p>
+
+      <p>
+        That's it. It's meant be simple and easy to use.
+        If you use hashtags, you can click on them to see similar mistakes and reflections clustered together.
+      </p>
+
+      <% unless current_user %>
+        <div class="buttons">
+          <%= link_to "Sign up now", new_user_registration_path, class: "button is-link" %>
+        </div>
+      <% end %>
+
+      <h3>🙈 Privacy</h3>
+
+      <p>
+        Sharing mistakes is highly personal; most of us are only comfortable being vulnerable with our inner cicle.
+        As such, your Mistake Log is private and only accessible to you.
+      </p>
+
+      <p>
+        I'm offering this hosted-service as a convenience. I'm not going to sell or disclose any of the data
+        that is entered into the site unless given express written consent.
+        But, there's no need to take my word for it.
+      </p>
+
+      <p>
+        If you'd prefer to host your own instance, the code is
+        <%= link_to "open source and available on github", @github, target: :_blank %>.
+      </p>
+
+      <h3>⚡️ Improvements</h3>
+
+      <p>
+        I enthusiastically welcome pull requests and potential enhancements.
+        Hopefully, we can make this tool as useful as possible.
+      </p>
+
+      <h3>🤖 Who is behind this?</h3>
+
+      <p>
+        Mistake Log was created by <%= link_to "Cyrus Stoller", "https://www.cyrusstoller.com/", target: :_blank %>
+        (<%= mail_to "cyrus@hoshon.com", "cyrus@hoshon.com", subject: "Re: Mistake Log" %>),
+        founder of <%= link_to "Hoshon", "https://www.hoshon.com?ref=mistakelog", target: :_blank %>.
+        Please feel free to reach out.
+      </p>
+    </div>
+  </div>
+</div>

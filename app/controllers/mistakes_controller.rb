@@ -5,12 +5,12 @@ class MistakesController < ApplicationController
   # GET /mistakes
   # GET /mistakes.json
   def index
-    @mistakes = policy_scope(Mistake.order(id: :desc)).page(params[:page])
+    @mistakes = policy_scope(Mistake.all).page(params[:page])
     authorize Mistake
 
     if params[:filter] == "incomplete"
       @title = "Without reflection"
-      @mistakes = @mistakes.incomplete
+      @mistakes = @mistakes.incomplete.order(reminder_date: :asc)
       @active_sidenav = :without_reflection
 
       if @mistakes.length == 0
@@ -19,7 +19,7 @@ class MistakesController < ApplicationController
       end
     elsif params[:filter] == "complete"
       @title = "With reflection"
-      @mistakes = @mistakes.complete
+      @mistakes = @mistakes.complete.order(id: :desc)
       @active_sidenav = :with_reflection
 
       if @mistakes.length == 0
@@ -28,6 +28,7 @@ class MistakesController < ApplicationController
       end
     else
       @title = "Full list"
+      @mistakes = @mistakes.order(id: :desc)
       @active_sidenav = :all_mistakes
     end
   end

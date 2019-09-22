@@ -3,7 +3,7 @@ Rails.application.routes.draw do
     root to: 'pages#home'
   end
   authenticate :user do
-    root to: 'mistakes#index'
+    root to: 'mistakes#index', as: :authenticated_root
   end
 
   devise_for :users, controllers: {

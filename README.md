@@ -21,14 +21,16 @@ bundle install
 yarn install
 rake db:create # first time only
 rake db:migrate
-foreman start
+foreman start # option 1
+heroku local:start # option 2
 
 rake send_notifications # to send reminder emails
 ```
 
-To run the test environment locally you can run either of the following commands:
+To run the test environment locally you can run any of the following commands:
 
 ```bash
+heroku local:run bundle exec guard
 foreman run bundle exec guard # to run tests whenever files are saved
 rake test
 ```

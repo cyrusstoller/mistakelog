@@ -8,7 +8,7 @@ Mistake Log will help you reflect on your patterns of behavior.
 
 ## Dependencies
 
-* Ruby v2.6.2
+* Ruby v2.6.4
 * Postgresql v11+
 * Node 10.12
 

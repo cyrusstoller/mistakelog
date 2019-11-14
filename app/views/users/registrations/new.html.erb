@@ -25,13 +25,6 @@
         </div>
       </div>
 
-      <% if devise_mapping.rememberable? -%>
-        <div class="field">
-          <%= f.check_box :remember_me %>
-          <%= f.label :remember_me %>
-        </div>
-      <% end -%>
-
       <div class="fields actions">
         <div class="control">
           <%= f.submit "Sign up", class: "button is-link" %>

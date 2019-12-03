@@ -9,7 +9,7 @@
     "bulma": "^0.7.5",
     "marked": "^0.7.0",
     "sanitize-html": "^1.20.1",
-    "tributejs": "^4.0.0",
+    "tributejs": "^4.1.1",
     "turbolinks": "^5.2.0",
     "vue": "^2.6.10",
     "vue-loader": "^15.7.2",

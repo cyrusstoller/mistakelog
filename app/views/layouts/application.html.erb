@@ -15,8 +15,8 @@
     <meta property="og:image:width" content="1200" />
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application' %>
-    <%= stylesheet_pack_tag 'application' %>
+    <%= javascript_packs_with_chunks_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_packs_with_chunks_tag 'application', 'data-turbolinks-track': 'reload' %>
 
     <%= render "layouts/analytics" %>
 

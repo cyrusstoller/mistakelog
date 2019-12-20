@@ -14,7 +14,50 @@
  *= require_self
  */
 
+// Keep look and feel from Bulma v0.7.x
+
+$control-height: 2.25em;
+$control-border-width: 1px !default;
+$control-padding-vertical: calc(0.375em - #{$control-border-width});
+$control-padding-horizontal: calc(0.625em - #{$control-border-width});
+
+$button-border-width: $control-border-width !default;
+$button-padding-vertical: calc(0.375em - #{$button-border-width});
+$button-padding-horizontal: 0.75em;
+
+$border: rgb(219, 219, 219);
+$shadow-color: rgba(10,10,10,0.1);
+
+$card-header-shadow: 0 1px 2px $shadow-color;
+$card-shadow: 0 2px 3px 0px $shadow-color, 0 0px 0 1px $shadow-color !default;
+$card-header-padding: 0.75rem 0.75rem !default
+
+$box-shadow: $card-shadow;
+
+$panel-item-border: 1px solid $border !default;
+$panel-radius: 4px !default;
+$panel-shadow: inherit;
+$panel-heading-line-height: 1.25 !default;
+$panel-heading-weight: 300 !default;
+$panel-heading-padding: 0.5em 0.75em !default;
+
+.panel-heading,
+.panel-tabs,
+.panel-block {
+  border-bottom: $panel-item-border;
+  border-left: $panel-item-border;
+  border-right: $panel-item-border;
+  &:first-child {
+    border-top: $panel-item-border;
+  }
+}
+
+$dropdown-content-shadow: $card-shadow;
+$dropdown-divider-background-color: $border !default;
+
 @import "bulma/bulma";
+
+// Original styling
 
 .message-body.flash-message, .add-top {
   margin: $hr-margin;

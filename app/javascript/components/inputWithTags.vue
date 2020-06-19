@@ -27,6 +27,9 @@ export default {
       values: function(text, cb){
         that.remoteSearch(text, tags => cb(tags));
       },
+      noMatchTemplate: function () {
+        return '<span style:"visibility: hidden;"></span>';
+      }
     })
     this.tribute.attach(this.$refs.textbox)
 
